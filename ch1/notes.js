@@ -28,5 +28,6 @@ console.log(false == 0)
 // → true
 
 /**
- * 
+ * unary + operator will attempt to convert non-numbers to numbers, ex. +false == 0
+ * unary + uses valueOf() method on the value, so custom method will control + behavior on object
  */
