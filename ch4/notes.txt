@@ -1,0 +1,14 @@
+Data Structures: Objects and Arrays
+
+- all objects have properties, null and undefined being the exceptions
+- access properties with dot or bracket notation (obj.prop or obj['prop'])
+- obj[prop] evaluates `prop` expression and converts the return to a string
+- properties that are functions are called methods
+- Object is an arbitrary collection of properties
+- properties can be added, removed, updated, accessed in any order, and can point to a value of any type
+- properties reference values, and do not hold the values themselves
+- `delete` operator removes a property from an object
+- `in` operator checks if a property exists in an object
+- `for...in` loops through all properties of an object
+- `Object.assign("key", value)` adds a property to an object
+- 
