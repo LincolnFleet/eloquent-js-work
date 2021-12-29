@@ -11,4 +11,7 @@ Data Structures: Objects and Arrays
 - `in` operator checks if a property exists in an object
 - `for...in` loops through all properties of an object
 - `Object.assign("key", value)` adds a property to an object
-- 
+- probability table for coincidence of a true/false feature and a true/false result
+	- "phi" ϕ = n11*n00 − n10*n01 / √(n1?*n0?*n?1*n?0)	// float > -1 && float < 1
+	- n01 is the count of the number of times the first feature is false and the second is true
+- `for ... of` loops through all properties of an array
