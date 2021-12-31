@@ -3,6 +3,7 @@
 
 function range(start, end, step = 1) {
 	let range = [];
+
 	for (
 		let i = start;
 		(start > end ? i >= end : i <= end);
@@ -10,6 +11,7 @@ function range(start, end, step = 1) {
 	) {
 		range.push(i)
 	}
+
 	return range;
 }
 
@@ -17,9 +19,11 @@ function range(start, end, step = 1) {
 
 function sum(arr) {
 	let sum = 0;
+
 	for (let num of arr) {
 		sum += num;
 	}
+
 	return sum;
 }
 
@@ -27,23 +31,41 @@ function sum(arr) {
 
 function reverseArray(arr = []) {
 	let reverseArray = [];
+
 	while (arr.length > 0) {
 		reverseArray.push(arr.pop());
 	}
+
 	return reverseArray;
 }
 
+// function reverseArrayInPlace(arr = []) {
+// 	for (let idxHigh = arr.length - 1, idxLow = 0; idxHigh > idxLow; idxHigh -= 1, idxLow += 1) {
+// 		const hiValue = arr[idxHigh];
+// 		const loValue = arr[idxLow];
+
+// 		arr[idxHigh] = loValue;
+// 		arr[idxLow] = hiValue;
+// 	}
+
+// 	return arr;
+// }
+
 function reverseArrayInPlace(arr = []) {
-	for (
-		let hi = arr.length - 1, lo = 0;
-		hi > lo;
-		hi -= 1, lo += 1
-	) {
-		let hiValue = arr[hi];
-		let loValue = arr[lo];
-		arr[hi] = loValue;
-		arr[lo] = hiValue;
+	let idxHigh = arr.length - 1;
+	let idxLow = 0;
+
+	while (idxHigh > idxLow) {
+		const valueHigh = arr[idxHigh];
+		const valueLow = arr[idxLow];
+
+		arr[idxHigh] = valueLow;
+		arr[idxLow] = valueHigh;
+
+		idxHigh -= 1;
+		idxLow += 1;
 	}
+
 	return arr;
 }
 
@@ -61,7 +83,9 @@ function reverseArrayInPlace(arr = []) {
 function arrayToList(arr = []) {
 	let isFirstEntry = true;
 	let list = {};
-	let workingItem = {}, prevItem = {};
+	let workingItem = {};
+	let prevItem = {};
+
 	for (let val of arr) {
 		if (isFirstEntry) {
 			workingItem = list;
@@ -74,6 +98,7 @@ function arrayToList(arr = []) {
 		workingItem.rest = null;
 		prevItem = workingItem;
 	}
+
 	return list;
 }
 
@@ -82,21 +107,24 @@ function arrayToList(arr = []) {
 function listToArray(obj = {}) {
 	let arr = [];
 	let currentItem = obj;
+
 	while (currentItem.rest) {
 		arr.push(currentItem.value);
 		currentItem = currentItem.rest;
 	}
+
 	return arr;
 }
 
 // Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list, and nth, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) or undefined when there is no such element.
 
 function prepend(value, list = {}) {
-	return { value, rest: list };
+	return { value: value, rest: list };
 }
 
 function nth(list = {}, idx) {
 	let item = list;
+
 	for (let i = 0; i <= idx; i++) {
 		if (i === idx) { return item.value; }
 		item = item.rest;
@@ -107,8 +135,8 @@ function nth(list = {}, idx) {
 
 function deepEqual(A, B) {
 	if ((typeof A === "object" && A !== null) && (typeof B === "object" && B !== null)) {
-		const AKeys = Object.keys(A);
-		const BKeys = Object.keys(B);
+		const AKeys = Object.keys(A),
+			BKeys = Object.keys(B);
 		if (AKeys.length !== BKeys.length) { return false; }
 
 		for (let key in AKeys) {
