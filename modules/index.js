@@ -1,4 +1,4 @@
 module.exports = {
 	Test: require("./test"),
-	Utils: require("./utils"),
+	Util: require("./util"),
 }
