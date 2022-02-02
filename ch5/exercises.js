@@ -17,8 +17,8 @@ function flatten(...args) {
 Test.unit({
 	label: 'flatten 1',
 	subject: flatten,
-	params: [[1, 2, 3], [4, 5], [6]],
-	expectedOutput: [1, 2, 3, 4, 5, 6],
+	params: [[1, 2, 3], [4, 5], [6], 7],
+	expectedOutput: [1, 2, 3, 4, 5, 6, 7],
 });
 
 

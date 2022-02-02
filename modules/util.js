@@ -7,7 +7,7 @@ module.exports = { noop, deepEquals, deepEquals_alt, countByCategory };
 
 /**
  * Empty function for use as a placeholder or null alternative.
- * @return {undefined}
+ * @return {void}
  */
 function noop() { };
 
