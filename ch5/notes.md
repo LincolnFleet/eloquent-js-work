@@ -7,4 +7,3 @@ Higher Order Functions
 - reduce applies a function to each item in a list and returns a single values
 - composability is the concept of writing simple, single-responsibility functions so that they can be combined into more complicated operations
 - strings can be looped over like arrays
-- 
